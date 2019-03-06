@@ -1,0 +1,14 @@
+{
+  "name": "ejemplos-m4-5",
+  "version": "1.0.0",
+  "description": "Ejemplos Modulos 4 y 5 del NodeMOOC",
+  "main": "main_lluis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lmb",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^5.15.1"
+  }
+}
