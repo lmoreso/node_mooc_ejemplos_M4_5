@@ -9,7 +9,7 @@
             "request": "launch",
             "name": "Launch Program",
             "program": "${workspaceFolder}/main_lluis.js",
-            "args": ["-a", "1", "2",],
+            "args": ["ddddd",],
         }
     ]
 }

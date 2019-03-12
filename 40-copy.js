@@ -2,6 +2,7 @@
 var fs = require('fs');     // Imports file system module
 
 if (process.argv.length != 4){  // Wrong parameters?
+  //throw ("Falten paràmetres, coi!");
   console.log('   syntax: "node copy <orig> <dest>"');
   process.exit()            // Finalizes node process
 }
