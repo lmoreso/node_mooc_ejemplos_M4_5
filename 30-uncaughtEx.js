@@ -4,7 +4,7 @@ process.on('uncaughtException', function(err) {
   console.log('PROGRAM ABORTED: ERROR:\n  -> ' + err);
 });
 
-console.log('This msg will be shown in the console');
+console.log('This msg will be shown in the console. HE MODIFICADO ESTE LOG EN MANGO');
 
 undefinedFunction(); // Generates execution error
 
