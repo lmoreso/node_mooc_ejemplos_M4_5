@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { mergeStyleSets, getTheme } from 'office-ui-fabric-react/lib/Styling';
+import { VOrderMenu, VOrderMenuOptions } from './VUtilsSb';
 
 
 export interface IDebugListConfig {
@@ -12,10 +13,11 @@ export interface IDebugListConfig {
 export interface IDebugListRenderProps {
     debug: DebugList;
     datos: any[];
+    onOrderBy: (orden: VOrderMenuOptions) => void; 
 }
 
 export function DebugListRenderTable(props: IDebugListRenderProps): React.ReactElement<{}> {
-    return (props.debug.renderTable(props.datos));
+    return (props.debug.renderTable(props.datos, props.onOrderBy));
 }
 
 export class DebugList {
@@ -122,12 +124,12 @@ export class DebugList {
         return (retVal);
     }
 
-    public renderTable(listDatos: any[]): React.ReactElement<{}> {
+    public renderTable(listDatos: any[], onOrderBy: (orden: VOrderMenuOptions) => void): React.ReactElement<{}> {
         const color = getTheme().palette.neutralPrimary;
         const estilos = mergeStyleSets({
             title: {
-                fontWeight: 'bold',
-                fontSize: 'medium',
+                fontSize: 'small',
+                margin: '4px',
             },
             tabla: {
                 fontSize: 'small',
@@ -153,7 +155,10 @@ export class DebugList {
 
         return (
             <div>
-                <p className={estilos.title}>{this.getTitle(listDatos.length)}</p>
+                <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center'}}>
+                    <label className={estilos.title}>{this.getTitle(listDatos.length)}</label>
+                    <span className={estilos.title}><VOrderMenu onOrderBy={onOrderBy}/></span>
+                </div>
                 <table className={estilos.tabla}>
                     <thead >
                         <tr>

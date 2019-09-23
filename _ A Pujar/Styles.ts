@@ -1,5 +1,8 @@
 import { mergeStyleSets, getTheme } from 'office-ui-fabric-react/lib/Styling';
 
+// const unaImagen = require('../public/FotoExample.jpg');
+
+
 // Estilos varios utilizados en este componente
 const theme = getTheme();
 export const styles = mergeStyleSets({
@@ -14,6 +17,7 @@ export const styles = mergeStyleSets({
         marginTop: '12px',
     },
     fichaManual: {
+        // backgroundImage: unaImagen.toString(),
         backgroundColor: theme.palette.neutralLight,
         padding: '8px',
         margin: '4px',
